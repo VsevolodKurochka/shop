@@ -937,6 +937,48 @@ Start: HEADER
 .header-logo a {
   color: inherit;
 }
+.header-btn {
+  z-index: 11;
+  padding: 10px;
+  background-color: #ff8001;
+  border: none;
+  transition: all ease .5s;
+  outline: none;
+}
+.header-btn .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #333333;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-transition: all ease 0.25s;
+  -o-transition: all ease 0.25s;
+  transition: all ease 0.25s;
+  transform-origin: 50% 100%;
+}
+.header-btn .icon-bar:not(.icon-bar-1) {
+  margin-top: 4px;
+}
+.header-btn.active {
+  background-color: #ffaa54;
+}
+.header-btn.active .icon-bar-1 {
+  -webkit-transform: rotate(45deg) translate(5px, 5px);
+  -ms-transform: rotate(45deg) translate(5px, 5px);
+  -o-transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.header-btn.active .icon-bar-2 {
+  opacity: 0;
+}
+.header-btn.active .icon-bar-3 {
+  -webkit-transform: rotate(-45deg) translate(4px, -3px);
+  -ms-transform: rotate(-45deg) translate(4px, -3px);
+  -o-transform: rotate(-45deg) translate(4px, -3px);
+  transform: rotate(-45deg) translate(4px, -3px);
+}
 .header-search {
   font-size: 0;
 }
@@ -1147,56 +1189,6 @@ Start: HEADER
   }
   .header-menu li {
     display: block;
-  }
-  .header-menu-btn {
-    position: fixed;
-    top: -1px;
-    : -1px;
-    z-index: 11;
-    padding: 10px;
-    background-color: #ff8001;
-    border: none;
-    transition: all ease .5s;
-    outline: none;
-  }
-  .header-menu-btn .icon-bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: #333333;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    -webkit-transition: all ease 0.25s;
-    -o-transition: all ease 0.25s;
-    transition: all ease 0.25s;
-    transform-origin: 50% 100%;
-  }
-  .header-menu-btn .icon-bar:not(.icon-bar-1) {
-    margin-top: 4px;
-  }
-  .header-menu-btn.active {
-    background-color: #ffaa54;
-  }
-  .header-menu-btn.active .icon-bar-1 {
-    -webkit-transform: rotate(45deg) translate(5px, 5px);
-    -ms-transform: rotate(45deg) translate(5px, 5px);
-    -o-transform: rotate(45deg) translate(5px, 5px);
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .header-menu-btn.active .icon-bar-2 {
-    opacity: 0;
-  }
-  .header-menu-btn.active .icon-bar-3 {
-    -webkit-transform: rotate(-45deg) translate(4px, -3px);
-    -ms-transform: rotate(-45deg) translate(4px, -3px);
-    -o-transform: rotate(-45deg) translate(4px, -3px);
-    transform: rotate(-45deg) translate(4px, -3px);
-  }
-}
-@media (min-width: 1025px) {
-  .header-menu-breakpoint, .header-inf, .header-menu-btn {
-    display: none;
   }
 }
 .header-inf-logo {

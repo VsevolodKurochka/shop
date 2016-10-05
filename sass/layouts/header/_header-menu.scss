@@ -65,48 +65,6 @@
 		    li{
 		    	display: block;
 		    }
-				&-btn{
-					position: fixed;
-					top: -1px;
-					#{$menuDirection}: -1px;
-					z-index: 11;	
-				  padding: 10px;
-				  background-color: setColor(corp);
-				  border: none;
-				  transition: all ease .5s;
-				  outline: none;
-				  .icon-bar{
-				    display: block;
-				    width: 22px;
-				    height: 2px;
-				    background-color: setColor(black);
-				    @include borderR(1px);
-				    @include transition(all ease .25s);
-				    transform-origin: 50% 100%;
-				    &:not(.icon-bar-1){
-				    	margin-top: 4px;
-				    }
-					}	
-				  &.active{
-				  	background-color: setColor(corp, light);
-				  	.icon-bar-1{
-				  		@include transform( rotate(45deg) translate(5px,5px) );
-				  	}
-				  	.icon-bar-2{
-							opacity: 0;
-				  	}
-				  	.icon-bar-3{
-				  		@include transform( rotate(-45deg) translate(4px, -3px) );
-				  	}
-				  }	
-				}
-			}
-		}
-		@include resp-min(md){
-			&-menu-breakpoint,
-			&-inf,
-			&-menu-btn{
-				display: none;
 			}
 		}
 		&-inf{
