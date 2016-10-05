@@ -3,11 +3,13 @@ Start: START FOOTER
 ======================== */
 .footer{
 	@extend .cf;
-	padding: 10px 0;
+	@extend .roboto_bold;
+	padding: 19px 0;
+	margin-top: 71px;
 	background: $gradient;
 	color: setColor(light);
 	font-size: 14px;
-	@extend .roboto_bold;
+	
 	&-b{
 		@extend .block-inline;
 		vertical-align: middle;

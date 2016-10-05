@@ -252,6 +252,7 @@ Start: COLUMN
     float: left;
   }
   &-main{
+    padding-top: 24px;
     &-title{
       &--inner{
         font-size: 26px;
@@ -429,7 +430,58 @@ End:  NEWS
     }
   }
 }
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 19px;
+}
+.table td, .table th {
+  padding: 9px 5px 0px;
+  vertical-align: top;
+}
+.table thead th {
+  vertical-align: bottom;
+}
+.checkbox{
+  
+  label{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #010101;
+    &:before{
+      @extend .pseudo;
+      left: 50%;
+      top: 50%;
+      margin-left: -5.5px;
+      margin-top: -4.5px;
+      width: 11px;
+      height: 9px;
+      @include bg("../img/check.png");
+      opacity: 0;
+      visibility: hidden;
+      transition: all ease .2s;
+    }
+  }
+  input{
+    display: none;
+    &:checked{
+      + label{
+        &:before{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
 .product{
+  &-wrap{
+    margin-top: 53px;
+    margin-bottom: 25px;
+  }
   &-item{
     width: 194px;
     display: block;
@@ -469,6 +521,106 @@ End:  NEWS
     }
     &-name{
       margin-top: 9px;
+    }
+  }
+  &-table{
+    @extend .border-dark;
+
+    &-title{
+      background-color: #e9e9e9;
+      padding: 17px 8px 6px;
+      &-small{
+        @extend .roboto_bold;
+        font-size: 15px;
+      }
+    }
+    tbody{
+      tr{
+        height: 41px;
+      }
+      td{
+        @extend .border-dark;
+      }
+    }
+    &-checkbox{
+      @extend .text-center;
+      width: 55px;
+    }
+    &-image{
+      width: 57px;
+      text-align: center;
+      padding-top: 7px !important;
+    }
+    &-price{
+      width: 97px;
+      @extend .roboto_bold;
+    }
+    &-gifts{
+      width: 100px;
+      text-align: center;
+      &-inner{
+        display: inline-block;
+        margin: 0 5px;
+      }
+    }
+    &-titles{
+      height: auto !important;
+      td{
+        border: none !important;
+        padding-top: 7px !important;
+        padding-bottom: 4px !important;
+      }
+    }
+    &-value{
+      display: inline-block;
+      font-size: 15px;
+      @extend .roboto_bold;
+      margin-right: 5px;
+      &-wrap{
+        margin-right: 25px;
+      }
+    }
+    &-select{
+      width: 56px;
+      height: 26px;
+      font-size: 13px;
+      @extend .border-dark;
+    }
+  }
+  &-new{
+    &-title{
+      &--inner{
+        &:after{
+          width: 26px;
+          height: 37px;
+          left: 9px;
+          top: -7px;
+          @include bg("../img/fire.png");
+        }
+      }
+    }
+  }
+}
+.pagination{
+  &-blocks,
+  &-title{
+    display: inline-block;
+  }
+  &-blocks{
+    margin-left: 9px;
+  }
+  &-num{
+    display: inline-block;
+    text-align: center;
+    padding: 3.5px 10px;
+    margin-right: 3px;
+    background-color: #f0f0f0;
+    @extend .border-dark;
+    &.active{
+      background-color: #e1e1e1;
+    }
+    &-link{
+      text-decoration: none;
     }
   }
 }

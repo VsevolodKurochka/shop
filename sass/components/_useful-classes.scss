@@ -6,8 +6,12 @@
 }
 $gradient: linear-gradient(to top, #1c749e, #3c91ba);
 $border: 1px solid #ccc;
+$border-dark: 1px solid #e1e1e1;
 .border{
 	border: $border;
+	&-dark{
+		border: $border-dark;
+	}
 	&-bottom{
 		border-bottom: $border;
 	}
