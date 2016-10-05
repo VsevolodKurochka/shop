@@ -1,0 +1,29 @@
+body{
+  color: setColor(black);
+  @extend .roboto;
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+img{
+  @extend .block-inline;
+  max-width: 100%;
+}
+input{
+  &:focus{
+    &::-webkit-input-placeholder{
+      color: transparent;
+    }
+    &:-moz-placeholder {
+      color: transparent;
+    }
+    &::-moz-placeholder {
+      color: transparent;
+    }
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+  }
+}
+a,button{
+  cursor: pointer;
+}

@@ -1,0 +1,183 @@
+.header {
+	@extend .cf;
+	background: $gradient;
+	color: setColor(light);
+	&-logo{
+		@extend .bebas_bold;
+		font-size: 24px;
+		a{
+			color: inherit;
+			@extend .tdn;
+		}
+	}
+	&-search{
+		@extend .relative;
+		font-size: 0;
+		&-pc{
+			position: relative;
+  		left: -15px;
+  		top: -3px;
+		}
+		input{
+			display: block;
+			width: 100%;
+			border: none;
+			height: 41px;
+		  padding-left: 13px;
+  		font-size: 16px;
+			background-color: setColor(light);
+			@extend .roboto;
+	    &::-webkit-input-placeholder{
+	      color: #333333;
+	    }
+	    &:-moz-placeholder {
+	      color: #333333;
+	    }
+	    &::-moz-placeholder {
+	      color: #333333;
+	    }
+	    &:-ms-input-placeholder {
+	      color: #333333;
+	    }
+		}
+		button{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 41px;
+			height: 41px;
+			background-color: #ffcc00;
+			border: none;
+			outline: none;
+			@extend .transition;
+			&:after,
+			&:before{
+				@extend .pseudo;
+				top: 50%;
+				margin-top: -8px;
+				border: 8px solid transparent;	
+			}
+			&:after{
+				border-left: 8px solid #333333;
+				left: 50%;
+				margin-left: -2px;
+			}
+			&:before{
+				border-right: 8px solid #ffcc00;
+				left: -16px;
+				@extend .transition;
+			}
+			&:hover{
+				background-color: #ff7878;
+				&:before{
+					border-right-color: #ff7878;
+				}
+			}
+		}
+	}
+	&-contacts{
+		@extend .bebas_bold;
+		font-size: 23px;
+		
+		&-pc{
+		 	position: relative;
+		  left: -22px;
+		  top: 1px;
+		}
+		&--inner{
+			@extend .relative;
+			@extend .block-inline;
+			vertical-align: middle;
+			padding-left: 37px;
+			&:before{
+				@extend .pseudo;
+				left: 0;
+				top: 50%;
+			}
+			&.phone{
+				margin-right: 32px;
+				&:before{
+					width: 30px;
+					height: 31px;
+					margin-top: -15.5px;
+					@include bg("../img/phone.png");
+				}
+			}
+			&.icq{
+				&:before{
+					width: 27px;
+					height: 27px;
+					margin-top: -13.5px;
+					@include bg("../img/icq.png");
+				}
+			}
+		}
+	}
+	&-entry{
+		font-size: 13px;
+		@extend .relative;
+		padding-left: 30px;
+		min-width: 180px;
+		&-pc{
+		  position: relative;
+		  top: 7px;
+		  left: -3px;
+		  &:before,
+		  &:after{
+		  	@extend .pseudo;
+			  top: -18px;
+			  
+			  width: 1px;
+			  height: 57px;
+			  background-color: rgba(225, 225, 225, 0.36);
+		  }
+		  &:after{
+		  	left: -19px;
+		  }
+		  &:before{
+		  	display: none;
+		  }
+		  @include resp-min(lg){
+		  	&:before{
+		  		right: -1px;
+		  		display: block;
+		  	}
+		  }
+		}
+		&:before{
+			@extend .pseudo;
+			top: 0;
+			left: 0;
+			width: 18px;
+			height: 18px;
+			@include bg("../img/entry.png");
+		}
+		&-link{
+			color: inherit;
+			text-decoration: none;
+			@extend .roboto_bold;
+		}
+		&-link,
+		&-divider{
+			display: inline-block;
+		}
+		&-divider{
+			margin: 0 7px;
+		}
+	}
+	@include resp-min(deflg){
+		padding-top: 10px;
+		padding-bottom: 4px;
+	}
+	@include resp-min(lg){
+		&-logo{
+			font-size: 28px;
+		}
+	}
+	@include resp-max(md){
+		&-logo{
+			margin-top: 40px;
+		}
+	}
+	
+}

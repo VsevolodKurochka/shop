@@ -1,0 +1,15 @@
+/* ===================== 
+Start: Connect fonts      
+======================== */
+@include connect-font(BebasNeue_Regular,bebas_regular);
+@include connect-font(BebasNeue_Bold,bebas_bold);
+.roboto{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	&_bold{
+		font-weight: 700;
+	}
+}
+/* =====================
+End:  Connect fonts
+======================== */

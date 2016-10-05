@@ -1,0 +1,51 @@
+/* ===================== 
+Start: START FOOTER      
+======================== */
+.footer{
+	@extend .cf;
+	padding: 10px 0;
+	background: $gradient;
+	color: setColor(light);
+	font-size: 14px;
+	@extend .roboto_bold;
+	&-b{
+		@extend .block-inline;
+		vertical-align: middle;
+		margin: 0 15px;
+	}
+	a{
+		@extend .tdn;
+		@extend .light !optional;
+	}
+	&-counters{
+		a{
+			display: block;
+		}
+	}
+	&-menu{
+		li{
+			display: inline-block;
+			padding-right: 15px;
+			@include resp-min(lg){
+				padding-right: 40px;
+			}
+			&:last-child{
+				padding-right: 0;
+			}
+		}
+		a{
+			color: inherit;
+		}
+	}
+
+	@include resp-min(md){
+		&-copy,
+		&-menu{
+			position: relative;
+			top: 30px;
+		}		
+	}
+}
+/* =====================
+End:  START FOOTER
+======================== */
