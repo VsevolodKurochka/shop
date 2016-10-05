@@ -15,9 +15,25 @@ Start: START FOOTER
 		vertical-align: middle;
 		margin: 0 15px;
 	}
+	&-btn{
+		&-wrap{
+			margin-bottom: 10px;
+		}
+		min-width: 115px;
+		padding: 10px 15px;
+	  background-color: #ffcc00;
+	  border: none;
+	  font-size: 15px;
+	  outline: none;
+	  @extend .transition;
+	  @extend .bebas_bold;
+	  &.active{
+	  	background-color: #ff7878;
+	  	color: setColor(light);
+	  }
+	}
 	a{
 		@extend .tdn;
-		@extend .light !optional;
 	}
 	&-counters{
 		a{
@@ -26,8 +42,7 @@ Start: START FOOTER
 	}
 	&-menu{
 		li{
-			display: inline-block;
-			padding-right: 15px;
+			display: block;
 			@include resp-min(lg){
 				padding-right: 40px;
 			}
@@ -39,13 +54,36 @@ Start: START FOOTER
 			color: inherit;
 		}
 	}
-
 	@include resp-min(md){
 		&-copy,
 		&-menu{
 			position: relative;
 			top: 30px;
 		}		
+	}
+	@include resp-max(md){
+		&-copy{
+			margin-top: 10px;
+		}
+	}
+	@include resp-min(sm){
+		&-menu{
+			li{
+				display: inline-block;
+				padding-right: 15px;
+			}
+		}
+	}
+	@include resp-max(sm){
+		&-menu{
+			display: none;
+			li{
+				a{
+					display: block;
+					padding: 5px;
+				}
+			}
+		}
 	}
 }
 /* =====================

@@ -53,43 +53,6 @@
     vertical-align: middle;   
   }
 }
-.main-form{
-  width: 100%;
-  @include resp-min(sm){
-    width: 300px;
-  }
-  @extend .center-block;
-  input{
-    border: 1px solid #eeeeee;
-    @include borderR(5px);
-    @extend .block-inline;
-    text-align: left;
-    width: 100%;
-    max-width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    color: #000;
-    font-size: 15px;
-    outline: none;
-    box-shadow: 0px 0px 10px 1px rgba(253, 188, 48, 0.17);
-    @extend .roboto;
-    @extend .transition;
-    &:focus{
-      border-color: setColor(corp);
-    }
-  }
-  .btn{
-    width: 100%;
-  }
-}
-.fixed{
-  position: fixed;
-  width: 100%;
-  left: 0;
-  &.bottom{
-    bottom: 0;
-  }
-}
 .slider-wrap{
   max-height: 441px;
   .owl{
@@ -138,37 +101,60 @@
     //   left: 100%;
     //   transform: scale(-1,1);
     // }
-  }
-  &-submenu{
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #2077a1;
-    min-width: 200px;
-    z-index: 2;
-    border-top: 1px solid #fff;
-    @extend .transition;
-    li{
-      padding: 5px 10px;
-      // &:last-child{
-      //   margin-bottom: 0;
-      // }
-      >ul{
-        border-top: none;
-        left: 100%;
-        top: 0;
-        border-left: 1px solid #fff;
+    .navigation{
+      &-menu{
+        &-list{
+          
+          float: left;
+          
+          > li{
+            display: inline-block;
+            border-right: 1px solid #e1e1e1;
+            padding: 18.5px 39.38px;
+            background-color: #2077a1;
+          }
+          &-right{
+            float: right;
+            background-color: #2999cf;
+            li{
+              border: none;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      &-submenu{
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: #2077a1;
+        min-width: 200px;
+        z-index: 2;
+        border-top: 1px solid #fff;
+        @extend .transition;
+        li{
+          padding: 5px 10px;
+          // &:last-child{
+          //   margin-bottom: 0;
+          // }
+          >ul{
+            border-top: none;
+            left: 100%;
+            top: 0;
+            border-left: 1px solid #fff;
+          }
+        }
+        a{
+          &:before{
+
+          }
+        }
       }
     }
-    a{
-      &:before{
-
-      }
-    }
-
   }
+
   &-menu{
     ul{
       font-size: 0;
@@ -223,21 +209,7 @@
       }
     }
     &-list{
-      float: left;
-      >li{
-        display: inline-block;
-        border-right: 1px solid #e1e1e1;
-        padding: 18.5px 39.38px;
-        background-color: #2077a1;
-      }
-      &-right{
-        float: right;
-        background-color: #2999cf;
-        li{
-          border: none;
-          background-color: transparent;
-        }
-      }
+
     }
   }
 }
@@ -352,6 +324,10 @@ Start: COLUMN
       border-bottom: 1px dotted #333;
     }
   }
+  display: none;
+  @include resp-min(deflg){
+    display: block;
+  }
   @include resp-min(lg){
     &-inf{
       padding: 27px 0px 0 26px;
@@ -373,6 +349,9 @@ Start: NEWS
 .news{
   &-title{
     margin-bottom: 31px;
+    @include resp-max(md){
+      padding-left: 15px;
+    }
     &--inner{
       &:after{
         width: 32px;
@@ -501,11 +480,13 @@ End:  NEWS
       }
     }
     &-image{
+
       height: 193px;
       @extend .relative;
       @extend .text-center;
       @extend .border;
       @extend .vertical-image;
+
     }
     &-notification{
       position: absolute;
@@ -525,7 +506,11 @@ End:  NEWS
   }
   &-table{
     @extend .border-dark;
-
+    &-hiddenPhone{
+      @include resp-max(xs){
+        display: none;
+      }
+    }
     &-title{
       background-color: #e9e9e9;
       padding: 17px 8px 6px;
@@ -550,6 +535,7 @@ End:  NEWS
       width: 57px;
       text-align: center;
       padding-top: 7px !important;
+      @extend .product-table-hiddenPhone;
     }
     &-price{
       width: 97px;
@@ -576,8 +562,10 @@ End:  NEWS
       font-size: 15px;
       @extend .roboto_bold;
       margin-right: 5px;
-      &-wrap{
-        margin-right: 25px;
+      @include resp-min(sm){
+        &-wrap{
+          margin-right: 25px;
+        }
       }
     }
     &-select{
@@ -602,12 +590,13 @@ End:  NEWS
   }
 }
 .pagination{
+
   &-blocks,
   &-title{
     display: inline-block;
   }
-  &-blocks{
-    margin-left: 9px;
+  &-title{
+    margin-right: 9px;
   }
   &-num{
     display: inline-block;
@@ -622,5 +611,8 @@ End:  NEWS
     &-link{
       text-decoration: none;
     }
+  }
+  @include resp-max(sm){
+    padding-left: 15px;
   }
 }

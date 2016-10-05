@@ -1,51 +1,12 @@
 $(document).ready(function(){
 
 		// VARIABLES
-		var header_menu_name 	= 'header-menu',
-				header_menu 			= $('.' + header_menu_name),
-				body 							= $("body"),
+		var body 							= $("body"),
 				visibility        = "in visible",
+				respPoint         = 1200,
 		 		backdrop = $("<div />", {
 					class: "vmodal-backdrop fade"
 				});
-		//MENU
-			//SCRIPTS
-			function toggler(){
-				header_menu.toggleClass('active');
-			}
-			$("[data-menu]").click(function(){
-				var menu_href = $(this).attr("data-menu");
-				$("[data-menu]").removeClass("active");
-				$(this).toggleClass("active");
-				toggler();
-			});
-			$('.anchor-menu').click(function(){
-				var href = $(this).attr('href');
-				$('body,html').animate({
-					scrollTop: $(href).offset().top
-				},2000);
-				toggler();
-				return false;
-			});
-			// function menuSwipe(){
-			// 	if ( $(document).width() <= responsiveBr ) {
-			// 		body.hammer().on("swiperight", function(){
-			// 			toggler();
-			// 		}).on("swipeleft", function(){
-			// 			toggler();
-			// 		});
-			// 	}
-			// }
-			// menuSwipe();
-			// $(window).resize(menuSwipe);
-			
-		// $(document).click(function(e){
-		// 	if( header_menu.hasClass(header_menu_name + '-open') ) {
-		// 		if ( ! $(e.target).is('.'+header_menu_name + ', .'+header_menu_name+"*") ) {
-		// 			toggler();
-		// 		}
-		// 	}
-		// });
 
 		// SCROLL TO BLOCK
 		$('.anchor').click(function(){
@@ -55,32 +16,77 @@ $(document).ready(function(){
 			},2000);
 			return false;
 		});
-		
-		$('[data-modal="modal"]').click(function(){
-			var thisTarget = $(this).attr("data-modal-target");
-			if ( thisTarget ) {
-				$(thisTarget).addClass(visibility);
-				body.append(backdrop).addClass("vmodal-open");
-				backdrop.addClass(visibility);
+		function toggleClassSpecial(elementClick, classSpecial){
+			$(elementClick).click(function(){
+				$(this).toggleClass(classSpecial);
+			});
+		}
+		function responsiveMenuClick(elementClick, blockVisible){
+			$(elementClick).click(function(){
+				$(".header-resp-wrap > div").not(blockVisible).slideUp("slow");
+				$(blockVisible).slideToggle("slow");
+			});
+		}
+		toggleClassSpecial(".header-resp-btn", "active");
+		toggleClassSpecial(".header-resp-search-btn", "active");
+
+		responsiveMenuClick(".header-resp-btn", ".header-resp-menu");
+		responsiveMenuClick(".header-resp-search-btn", ".header-resp-search");
+		function swapMenu(){
+			if ( $(window).width() < respPoint ) {
+				$(".navigation-menu").appendTo(".header-resp-menu");
+				$(".header-search").appendTo(".header-resp-search");
 			}else{
-				console.log("Need attribtue [data-modal-target].");
+				$(".navigation-menu").appendTo(".navigation-pc");
+				$(".header-search").appendTo(".header-search-pc");
+			}
+		}
+		swapMenu();
+		$(window).resize(swapMenu);
+
+		$(".navigation-menu li").each(function(){
+			if ( $(this).children(".navigation-submenu").length > 0 ) {
+				$(this).addClass("has-submenu");
 			}
 		});
-		$('[data-close="modal"]').click(function(){
-			$(this).closest(".vmodal").removeClass(visibility);
-			backdrop.removeClass(visibility);
-			body.removeClass("vmodal-open");
+		$(".header-resp-menu li.has-submenu > a").click(function(e){
+			$(this).next().slideToggle("slow");
+			e.preventDefault();
 		});
-		$(window).click(function(e){
-			if ( backdrop.length > 0 ) {
-				if ( $(e.target).is(".vmodal") ) {
-					$(".vmodal.in").removeClass(visibility);
-					backdrop.removeClass(visibility);
-					body.removeClass("vmodal-open");
-					console.log("document clicked");
-				}
+		$(".footer-btn").click(function(){
+			$(this).toggleClass("active");
+			$(".footer-menu").slideToggle("slow");
+			if ( $(this).hasClass("active") ) {
+				$(this).text("Скрыть меню");
+			}else{
+				$(this).text("Показать меню");
 			}
 		});
+		// $('[data-modal="modal"]').click(function(){
+		// 	var thisTarget = $(this).attr("data-modal-target");
+		// 	if ( thisTarget ) {
+		// 		$(thisTarget).addClass(visibility);
+		// 		body.append(backdrop).addClass("vmodal-open");
+		// 		backdrop.addClass(visibility);
+		// 	}else{
+		// 		console.log("Need attribtue [data-modal-target].");
+		// 	}
+		// });
+		// $('[data-close="modal"]').click(function(){
+		// 	$(this).closest(".vmodal").removeClass(visibility);
+		// 	backdrop.removeClass(visibility);
+		// 	body.removeClass("vmodal-open");
+		// });
+		// $(window).click(function(e){
+		// 	if ( backdrop.length > 0 ) {
+		// 		if ( $(e.target).is(".vmodal") ) {
+		// 			$(".vmodal.in").removeClass(visibility);
+		// 			backdrop.removeClass(visibility);
+		// 			body.removeClass("vmodal-open");
+		// 			console.log("document clicked");
+		// 		}
+		// 	}
+		// });
 		//DEVELOPE
 		// var widthDevice = $(window).width();
 		// $(".development").html(widthDevice);

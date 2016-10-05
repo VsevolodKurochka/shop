@@ -16,3 +16,7 @@ $border-dark: 1px solid #e1e1e1;
 		border-bottom: $border;
 	}
 }
+.link-default{
+	color: inherit;
+	@extend .tdn;
+}

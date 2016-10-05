@@ -27,3 +27,13 @@ input{
 a,button{
   cursor: pointer;
 }
+@include resp-max(deflg){
+  .main{
+    padding-top: 44px;
+  }
+  @include resp-min(xs){
+    .main{
+      padding-top: 48px;
+    }
+  } 
+}

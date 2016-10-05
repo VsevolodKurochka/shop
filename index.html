@@ -23,30 +23,34 @@
 		<header class="header">
 			<div class="vcontainer">
 				<div class="vrow hidden-deflg">
-					<div class="cf header-resp-cont">
-						<div class="head-resp-btn">
-							<button type="button" class="header-btn">
+					<div class="cf header-resp-cont text-center">
+						<div class="header-resp-btn-wrap">
+							<button type="button" class="header-resp-btn header-btn">
 	              <span class="icon-bar icon-bar-1"></span>
 	              <span class="icon-bar icon-bar-2"></span>
 	              <span class="icon-bar icon-bar-3"></span>
 	            </button>
 						</div>
+						<div class="header-resp-name-wrap">
+							<a href="#">Магазин цифровых товаров</a>
+						</div>
+						<div class="header-resp-search-wrap">
+							<span class="header-resp-search-btn"></span>
+						</div>
 					</div>
 					<div class="cf header-resp-wrap">
-						<div class="header-resp-menu">
+						<div class="header-resp-wrap-inner header-resp-menu">
+							
+						</div>
+						<div class="header-resp-wrap-inner header-resp-search">
 							
 						</div>
 					</div>
-				</div>
+				</div><!-- /responsive-menu -->
 				<div class="vrow visible-deflg">
 					<div class="vcol-xs-12 vcol-md-3 max-md-center">
 						<div class="header-logo">
 							<a href="#">Магазин цифровых товаров</a>
-							<button type="button" class="header-menu-btn" data-menu=".header-menu">
-	              <span class="icon-bar icon-bar-1"></span>
-	              <span class="icon-bar icon-bar-2"></span>
-	              <span class="icon-bar icon-bar-3"></span>
-	            </button>
           	</div>
 					</div>
 					<div class="vcol-xs-12 vcol-md-3 vcol-lg-4">
@@ -78,7 +82,7 @@
 							</div>
 						</div>
 					</div>	
-				</div>
+				</div><!-- /default-menu -->
 			</div>
 		</header>
 		<div class="cf slider-wrap">
@@ -99,10 +103,10 @@
 						<div class="navigation-menu">
 							<ul class="navigation-menu-list">
 								<li><a href="#" class="">Главная</a></li>
-								<li class="has-submenu">
+								<li>
 									<a href="#" class="">Каталог</a>
 									<ul class="navigation-submenu">
-										<li class="has-submenu"><a href="#" class="">Информация</a>
+										<li><a href="#" class="">Информация</a>
 											<ul class="navigation-submenu">
 												<li><a href="">Текст1</a></li>
 												<li><a href="">Текст2</a></li>
@@ -139,10 +143,10 @@
 			<div class="vcontainer">
 				<div class="vrow">
 					<div class="column-main">
-						<div class="cf">
-							<div class="cf product-table-title">
+						<div class="cf max-sm-negative">
+							<div class="cf product-table-title max-sm-center">
 								<span class="column-main-title--inner product-new-title--inner">Новые поступления</span>
-								<div class="vpull-right product-table-value-wrap">
+								<div class="vpull-sm-right product-table-value-wrap">
 									<span class="product-table-value">Валюта: </span>
 									<select name="" id="" class="product-table-select">
 										<option value="" selected>RUR</option>
@@ -156,7 +160,7 @@
 								<tbody>
 									<tr class="product-table-titles">
 										<td></td>
-										<td></td>
+										<td class="product-table-hiddenPhone"></td>
 										<td class="product-table-title-small">
 											Название
 										</td>
@@ -457,7 +461,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="cf product-wrap max-lg-center">
+						<div class="cf product-wrap max-lg-center max-md-negative">
 							<p class="column-main-title column-main-title--border top-title">
 								<span class="column-main-title--inner top-title--inner">топ продаж</span>
 							</p>
@@ -615,7 +619,7 @@
 							</div>
 						</div>
 						<div class="cf news-wrap">
-							<p class="column-main-title column-main-title--border news-title">
+							<p class="column-main-title column-main-title--border news-title max-md-negative">
 								<span class="column-main-title--inner news-title--inner">Новости</span>
 							</p>							
 							<div class="news-block">
@@ -728,6 +732,11 @@
 		<footer class="footer">
 			<div class="vcontainer">
 				<div class="vrow">
+					<div class="cf visible-xs footer-btn-wrap">
+						<div class="vcol-xs-12">
+							<button class="footer-btn">Показать меню</button>
+						</div>
+					</div>
 					<div class="vcol-xs-12 vcol-md-2 vcol-md-push-2 hidden-xs hidden-sm">
 						<div class="footer-counters text-center">
 							<a href="">
